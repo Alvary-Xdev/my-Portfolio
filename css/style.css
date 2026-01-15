@@ -59,7 +59,7 @@ header {
 
 @media (max-width: 768px) {
     header {
-        padding: 0 20px;
+        padding: 0 5px;
         height: auto;
         margin-top: 10px;
     }
@@ -516,4 +516,5 @@ img {
 
 @keyframes show-bar { /*@keyframes show-bars instead*/
     100%{transform: translateY(0%);}
+
 }
