@@ -201,7 +201,30 @@ nav a:nth-child(5).active~span {
 }
 
 /* Hover state positioning */
-@media (max-width: 768px) {
+nav a:nth-child(1):hover~span {
+    left: 0px;
+    width: 84px;
+}
+nav a:nth-child(2):hover~span {
+    left: 90px;
+    width: 75px;
+}
+nav a:nth-child(3):hover~span {
+    left: 176px;
+    width: 90px;
+}
+nav a:nth-child(4):hover~span {
+    left: 280px;
+    width: 78px;
+}
+nav a:nth-child(5):hover~span {
+    left: 373px;
+    width: 82px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 794px) {
+  /* CSS styles to be applied when the viewport width is between 600px and 1200px (inclusive) */
+
     nav a:nth-child(1):hover~span {
         left: 8px;
         width: 56px;
@@ -223,29 +246,6 @@ nav a:nth-child(5).active~span {
         width: 60px;
     }
 }
-/*
-@media (max-width: 768px) {
-    nav a:nth-child(1):hover~span {
-        left: 8px;
-        width: 60px;
-    }
-    nav a:nth-child(2):hover~span {
-        left: 70px;
-        width: 62px;
-    }
-    nav a:nth-child(3):hover~span {
-        left: 136px;
-        width: 78px;
-    }
-    nav a:nth-child(4):hover~span {
-        left: 219px;
-        width: 67px;
-    }
-    nav a:nth-child(5):hover~span {
-        left: 291px;
-        width: 72px;
-    }
-}*/
 /*==============beginnig of the content=======*/
 
 .home {
@@ -530,6 +530,7 @@ img {
 
 @keyframes show-bar { /*@keyframes show-bars instead*/
     100%{transform: translateY(0%);}
+
 }
 
 
