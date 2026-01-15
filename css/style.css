@@ -180,46 +180,48 @@ nav a:nth-child(5).active~span {
 @media (max-width: 768px) {
     nav a:nth-child(1).active~span {
         left: 8px;
-        width: 60px;
+        width: 56px;
     }
     nav a:nth-child(2).active~span {
         left: 70px;
-        width: 62px;
+        width: 58px;
     }
     nav a:nth-child(3).active~span {
         left: 136px;
-        width: 78px;
+        width: 70px;
     }
     nav a:nth-child(4).active~span {
         left: 219px;
-        width: 67px;
+        width: 63px;
     }
     nav a:nth-child(5).active~span {
         left: 291px;
-        width: 72px;
+        width: 60px;
     }
 }
 
 /* Hover state positioning */
-nav a:nth-child(1):hover~span {
-    left: 0px;
-    width: 84px;
-}
-nav a:nth-child(2):hover~span {
-    left: 90px;
-    width: 75px;
-}
-nav a:nth-child(3):hover~span {
-    left: 176px;
-    width: 90px;
-}
-nav a:nth-child(4):hover~span {
-    left: 280px;
-    width: 78px;
-}
-nav a:nth-child(5):hover~span {
-    left: 373px;
-    width: 82px;
+@media (max-width: 768px) {
+    nav a:nth-child(1):hover~span {
+        left: 8px;
+        width: 56px;
+    }
+    nav a:nth-child(2):hover~span {
+        left: 70px;
+        width: 58px;
+    }
+    nav a:nth-child(3):hover~span {
+        left: 136px;
+        width: 70px;
+    }
+    nav a:nth-child(4):hover~span {
+        left: 219px;
+        width: 63px;
+    }
+    nav a:nth-child(5):hover~span {
+        left: 291px;
+        width: 60px;
+    }
 }
 /*
 @media (max-width: 768px) {
@@ -528,7 +530,6 @@ img {
 
 @keyframes show-bar { /*@keyframes show-bars instead*/
     100%{transform: translateY(0%);}
-
 }
 
 
