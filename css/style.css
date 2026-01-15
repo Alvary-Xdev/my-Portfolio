@@ -48,7 +48,7 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 43px;
+    height: 50px;
     visibility: hidden;
     opacity: 0;
     border-bottom: 1px solid rgb(66, 116, 66);
@@ -59,7 +59,7 @@ header {
 
 @media (max-width: 768px) {
     header {
-        padding: 0 20px;
+        padding: 0;
         height: auto;
         margin-top: 10px;
     }
@@ -184,27 +184,27 @@ nav a:nth-child(5).active~span {
 @media (max-width: 768px) {
     nav a:nth-child(1).active~span {
         left: 8px;
-        width: 59px;
+        width: 54px;
     }
     
     nav a:nth-child(2).active~span {
-        left: 73px;
-        width: 61px;
+        left: 72px;
+        width: 55px;
     }
     
     nav a:nth-child(3).active~span {
         left: 137px;
-        width: 78px;
+        width: 72px;
     }
     
     nav a:nth-child(4).active~span {
-        left: 220px;
-        width: 68px;
+        left: 219px;
+        width: 63px;
     }
     
     nav a:nth-child(5).active~span {
-        left: 293px;
-        width: 70px;
+        left: 291px;
+        width: 67px;
     }
 }
 
@@ -518,3 +518,4 @@ img {
     100%{transform: translateY(0%);}
 
 }
+
