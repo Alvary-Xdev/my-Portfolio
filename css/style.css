@@ -144,7 +144,7 @@ nav a:hover {
 nav span {
     position: absolute;
     top: 0;
-    left: 10;
+    left: 0;
     width: 80px;
     height: 100%;
     color: #fff;
@@ -157,57 +157,48 @@ nav span {
 
 /* Active state positioning */
 nav a:nth-child(1).active~span {
-    left: 0;
-    width: 82px;
+    left: 0px;
+    width: 84px;
 }
-
 nav a:nth-child(2).active~span {
     left: 90px;
-    width: 73px;
+    width: 75px;
 }
-
 nav a:nth-child(3).active~span {
     left: 176px;
-    width: 89px;
+    width: 90px;
 }
-
 nav a:nth-child(4).active~span {
     left: 280px;
-    width: 76px;
+    width: 78px;
 }
-
 nav a:nth-child(5).active~span {
     left: 373px;
-    width: 80px;
+    width: 82px;
 }
 
 @media (max-width: 768px) {
     nav a:nth-child(1).active~span {
-        left: 33;
+        left: 8px;
         width: 60px;
     }
-    
     nav a:nth-child(2).active~span {
-        left: 67px;
+        left: 70px;
         width: 62px;
     }
-    
     nav a:nth-child(3).active~span {
-        left: 133px;
+        left: 136px;
         width: 78px;
     }
-    
     nav a:nth-child(4).active~span {
-        left: 215px;
+        left: 219px;
         width: 67px;
     }
-    
     nav a:nth-child(5).active~span {
-        left: 287px;
+        left: 291px;
         width: 72px;
     }
 }
-
 
 /* Hover state positioning */
 nav a:nth-child(1):hover~span {
@@ -230,8 +221,29 @@ nav a:nth-child(5):hover~span {
     left: 373px;
     width: 82px;
 }
-
-
+/*
+@media (max-width: 768px) {
+    nav a:nth-child(1):hover~span {
+        left: 8px;
+        width: 60px;
+    }
+    nav a:nth-child(2):hover~span {
+        left: 70px;
+        width: 62px;
+    }
+    nav a:nth-child(3):hover~span {
+        left: 136px;
+        width: 78px;
+    }
+    nav a:nth-child(4):hover~span {
+        left: 219px;
+        width: 67px;
+    }
+    nav a:nth-child(5):hover~span {
+        left: 291px;
+        width: 72px;
+    }
+}*/
 /*==============beginnig of the content=======*/
 
 .home {
@@ -518,7 +530,6 @@ img {
     100%{transform: translateY(0%);}
 
 }
-
 
 
 
