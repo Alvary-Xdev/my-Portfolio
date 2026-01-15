@@ -373,7 +373,7 @@ nav a:nth-child(5):hover~span {
 }
 
 .home-info .btn-sci .sci {
-    margin-left: 37px;
+    margin-left: 30px;
     display: flex;
     align-items: center;
 }
@@ -518,5 +518,6 @@ img {
     100%{transform: translateY(0%);}
 
 }
+
 
 
