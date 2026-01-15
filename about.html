@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin-top: 10%;
+            padding: 0 8%;
+            color: #fff;
+        }
+
+        .about-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #0c0, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-header p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+            max-width: 700px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(124,58,237,0.3);
+            border-radius: 14px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            border-color: #0c0;
+            box-shadow: 0 0 20px rgba(0,204,0,0.3);
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #0c0;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .skill-card li {
+            font-size: 15px;
+            color: rgba(255,255,255,0.75);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skill-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #06b6d4;
+            font-weight: bold;
+        }
+
+        .experience-timeline {
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #0c0;
+            border-radius: 50%;
+            border: 3px solid #0f172a;
+            box-shadow: 0 0 10px rgba(0,204,0,0.5);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 20px;
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, #0c0, transparent);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-content h3 {
+            font-size: 20px;
+            color: #0c0;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            color: #06b6d4;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .timeline-content .description {
+            color: rgba(255,255,255,0.75);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 0 15px;
+                margin-top: 20%;
+                gap: 40px;
+            }
+
+            .about-header h1 {
+                font-size: 36px;
+            }
+
+            .about-header p {
+                font-size: 16px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-card {
+                padding: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 30px;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-header h1 {
+                font-size: 28px;
+            }
+
+            .about-header p {
+                font-size: 14px;
+            }
+
+            .skill-card h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Portfolio</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a class="active" href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="service.html">Service</a>
+            <a href="contact.html">Contact</a>
+            <span></span>
+        </nav>
+    </header>
+
+    <div class="bars-animation">
+        <div class="bar" style="--i:8;"></div>
+        <div class="bar" style="--i:7;"></div>
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div>
+    </div>
+
+    <section class="about-section">
+        <div class="about-header">
+            <h1>About Me</h1>
+            <p>I'm Adamu Alvary, a versatile professional with expertise spanning frontend development, solar systems design, data analytics, and mathematics. With a passion for creating innovative solutions and sustainable technologies, I combine technical expertise with creative problem-solving to deliver impactful results.</p>
+        </div>
+
+        <div>
+            <h2 style="font-size: 32px; margin-bottom: 30px; color: #0c0;">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3><i class="fas fa-code"></i> Frontend Development</h3>
+                    <ul>
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript</li>
+                        <li>React.js</li>
+                        <li>Responsive Design</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3><i class="fas fa-solar-panel"></i> Solar Systems</h3>
+                    <ul>
+                        <li>System Design</li>
+                        <li>Installation</li>
+                        <li>Maintenance</li>
+                        <li>Energy Analysis</li>
+                        <li>Efficiency Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3><i class="fas fa-chart-bar"></i> Data Analysis</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Data Visualization</li>
+                        <li>Statistical Analysis</li>
+                        <li>Excel & SQL</li>
+                        <li>Business Intelligence</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3><i class="fas fa-calculator"></i> Mathematics</h3>
+                    <ul>
+                        <li>Calculus</li>
+                        <li>Linear Algebra</li>
+                        <li>Statistics</li>
+                        <li>Problem Solving</li>
+                        <li>Modeling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="experience-timeline">
+            <h2 style="font-size: 32px; margin-bottom: 30px; color: #0c0;">Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Senior Frontend Developer</h3>
+                    <p>Tech Company | 2021 - Present</p>
+                    <div class="description">
+                        Led development of responsive web applications with focus on user experience. Mentored junior developers and established coding best practices.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Solar Systems Specialist</h3>
+                    <p>Green Energy Solutions | 2019 - 2021</p>
+                    <div class="description">
+                        Designed and installed residential and commercial solar systems. Optimized energy efficiency for 50+ installations.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Data Analyst</h3>
+                    <p>Analytics Firm | 2017 - 2019</p>
+                    <div class="description">
+                        Analyzed complex datasets to provide actionable insights. Created visualizations and reports for stakeholders.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="clock.js"></script>
+</body>
+</html>

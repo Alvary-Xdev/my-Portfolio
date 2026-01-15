@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - My Work</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .portfolio-section {
+            margin-top: 10%;
+            padding: 0 8%;
+            color: #fff;
+        }
+
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .portfolio-header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #0c0, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .portfolio-header p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(124,58,237,0.3);
+            color: #fff;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #0c0;
+            color: #1f1f1f;
+            border-color: #0c0;
+            box-shadow: 0 0 15px rgba(0,204,0,0.3);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(124,58,237,0.3);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #0c0;
+            box-shadow: 0 0 30px rgba(0,204,0,0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(21, 6, 235, 0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(4, 180, 4, 0.1), transparent);
+            animation: shimmer 8s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            40% { transform: translateY(50%); }
+            60% { transform: translateY(-50%); }
+            80% { transform: translateX(100%); }
+            90% { transform: translateX(-60%); }
+            95% { transform: translateY(90%); }
+            100% { transform: translateX(-95%); }
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #0cb60c;
+        }
+
+        .project-content p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .project-tag {
+            background: rgba(6,182,212,0.2);
+            color: #06b6d4;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #0c0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #06b6d4;
+            margin-right: -10px;
+        }
+
+        .project-link::after {
+            content: ' →';
+            display: inline-block;
+            margin-left: 8px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .project-link:hover::after {
+            margin-left: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-section {
+                padding: 0 15px;
+                margin-top: 20%;
+            }
+
+            .portfolio-header h1 {
+                font-size: 36px;
+            }
+
+            .filter-buttons {
+                gap: 10px;
+                margin-bottom: 40px;
+            }
+
+            .filter-btn {
+                padding: 8px 18px;
+                font-size: 13px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-header h1 {
+                font-size: 28px;
+            }
+
+            .portfolio-header p {
+                font-size: 14px;
+            }
+
+            .project-image {
+                height: 150px;
+            }
+
+            .project-content h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Portfolio</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a class="active" href="portfolio.html">Portfolio</a>
+            <a href="service.html">Service</a>
+            <a href="contact.html">Contact</a>
+            <span></span>
+        </nav>
+    </header>
+
+    <div class="bars-animation">
+        <div class="bar" style="--i:8;"></div>
+        <div class="bar" style="--i:7;"></div>
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div>
+    </div>
+
+    <section class="portfolio-section">
+        <div class="portfolio-header">
+            <h1>My Work</h1>
+            <p>A selection of projects showcasing my expertise in web development, design, and innovation</p>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Web Design</button>
+            <button class="filter-btn">Frontend</button>
+            <button class="filter-btn">Solar Systems</button>
+            <button class="filter-btn">Data Analysis</button>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="project-content">
+                    <h3>E-Commerce Platform</h3>
+                    <p>A fully responsive e-commerce website with modern UI/UX design and smooth user experience.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML5</span>
+                        <span class="project-tag">CSS3</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-solar-panel"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Solar System Design</h3>
+                    <p>Complete design and installation of a 25kW commercial solar system with ROI analysis.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Solar</span>
+                        <span class="project-tag">Engineering</span>
+                        <span class="project-tag">Analysis</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Data Analytics Dashboard</h3>
+                    <p>Interactive dashboard for visualizing complex business data with real-time insights.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Analytics</span>
+                        <span class="project-tag">Dashboard</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Mobile App Interface</h3>
+                    <p>Modern mobile app design with intuitive navigation and beautiful visual hierarchy.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">UI/UX</span>
+                        <span class="project-tag">Mobile</span>
+                        <span class="project-tag">Design</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Brand Identity Design</h3>
+                    <p>Complete branding package including logo design, color palette, and brand guidelines.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Branding</span>
+                        <span class="project-tag">Design</span>
+                        <span class="project-tag">Logo</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Backend API Development</h3>
+                    <p>RESTful API for a complex application with database optimization and security features.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Backend</span>
+                        <span class="project-tag">API</span>
+                        <span class="project-tag">Database</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="clock.js"></script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .service-section {
+            margin-top: 10%;
+            padding: 0 8%;
+            color: #fff;
+        }
+
+        .service-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .service-header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #0c0, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-header p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(124,58,237,0.3);
+            border-radius: 14px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #0c0, #06b6d4);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: #0c0;
+            box-shadow: 0 0 20px rgba(0,204,0,0.2);
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            color: #0c0;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .service-card:nth-child(2) .service-icon {
+            animation-delay: 0.5s;
+        }
+
+        .service-card:nth-child(3) .service-icon {
+            animation-delay: 1s;
+        }
+
+        .service-card:nth-child(4) .service-icon {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .service-features li {
+            list-style: none;
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #06b6d4;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .service-cta {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .service-cta .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background: transparent;
+            border: 2px solid #0c0;
+            color: #0c0;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .service-cta .btn:hover {
+            background: #0c0;
+            color: #1f1f1f;
+            box-shadow: 0 0 20px rgba(0,204,0,0.3);
+        }
+
+        .pricing-section {
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid rgba(124,58,237,0.3);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .pricing-header h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #0c0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: rgba(255,255,255,0.04);
+            border: 2px solid rgba(124,58,237,0.3);
+            border-radius: 14px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: #0c0;
+            box-shadow: 0 0 30px rgba(0,204,0,0.15);
+            transform: scale(1.05);
+        }
+
+        .pricing-card .price {
+            font-size: 48px;
+            font-weight: bold;
+            color: #0c0;
+            margin: 20px 0;
+        }
+
+        .pricing-card .price span {
+            font-size: 18px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-card li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .pricing-card li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .service-section {
+                padding: 0 15px;
+                margin-top: 20%;
+            }
+
+            .service-header h1 {
+                font-size: 36px;
+            }
+
+            .service-header p {
+                font-size: 16px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-card {
+                padding: 30px 20px;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-header h1 {
+                font-size: 28px;
+            }
+
+            .pricing-header h2 {
+                font-size: 30px;
+            }
+
+            .pricing-card .price {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Portfolio</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a class="active" href="service.html">Service</a>
+            <a href="contact.html">Contact</a>
+            <span></span>
+        </nav>
+    </header>
+
+    <div class="bars-animation">
+        <div class="bar" style="--i:8;"></div>
+        <div class="bar" style="--i:7;"></div>
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div>
+    </div>
+
+    <section class="service-section">
+        <div class="service-header">
+            <h1>Services</h1>
+            <p>Comprehensive solutions tailored to meet your specific needs and drive business growth</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Custom, responsive websites built with the latest technologies and best practices.</p>
+                <ul class="service-features">
+                    <li>Responsive Design</li>
+                    <li>Cross-browser Compatible</li>
+                    <li>Performance Optimized</li>
+                    <li>SEO Friendly</li>
+                </ul>
+                <div class="service-cta">
+                    <a href="contact.html" class="btn">Get Started</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-solar-panel"></i>
+                </div>
+                <h3>Solar Systems</h3>
+                <p>Professional design, installation, and maintenance of solar energy systems.</p>
+                <ul class="service-features">
+                    <li>System Design</li>
+                    <li>Installation</li>
+                    <li>Maintenance Plans</li>
+                    <li>ROI Analysis</li>
+                </ul>
+                <div class="service-cta">
+                    <a href="contact.html" class="btn">Consult Now</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>Data Analytics</h3>
+                <p>Transform your data into actionable insights with comprehensive analysis.</p>
+                <ul class="service-features">
+                    <li>Data Visualization</li>
+                    <li>Statistical Analysis</li>
+                    <li>Custom Reports</li>
+                    <li>Business Intelligence</li>
+                </ul>
+                <div class="service-cta">
+                    <a href="contact.html" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>Beautiful, intuitive interfaces that enhance user experience and engagement.</p>
+                <ul class="service-features">
+                    <li>User Research</li>
+                    <li>Wireframing</li>
+                    <li>Prototyping</li>
+                    <li>Design Systems</li>
+                </ul>
+                <div class="service-cta">
+                    <a href="contact.html" class="btn">Design Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-cta" style="margin-top: 40px;">
+            <div class="pricing-section">
+                <div class="pricing-header">
+                    <h2>Pricing Plans</h2>
+                    <p>Choose the plan that best fits your needs</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Starter</h3>
+                        <div class="price">$499<span>/month</span></div>
+                        <ul>
+                            <li>✓ Basic website</li>
+                            <li>✓ 5 pages</li>
+                            <li>✓ Mobile responsive</li>
+                            <li>✓ Email support</li>
+                            <li>✗ Analytics</li>
+                        </ul>
+                        <button class="btn">Choose Plan</button>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <h3>Professional</h3>
+                        <div class="price">$999<span>/month</span></div>
+                        <ul>
+                            <li>✓ Advanced website</li>
+                            <li>✓ Unlimited pages</li>
+                            <li>✓ Mobile responsive</li>
+                            <li>✓ Priority support</li>
+                            <li>✓ Analytics & SEO</li>
+                        </ul>
+                        <button class="btn">Choose Plan</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>Enterprise</h3>
+                        <div class="price">Custom<span>/quote</span></div>
+                        <ul>
+                            <li>✓ Full custom solution</li>
+                            <li>✓ Advanced features</li>
+                            <li>✓ API integration</li>
+                            <li>✓ 24/7 support</li>
+                            <li>✓ Custom analytics</li>
+                        </ul>
+                        <button class="btn">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="clock.js"></script>
+</body>
+</html>
