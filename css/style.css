@@ -183,28 +183,28 @@ nav a:nth-child(5).active~span {
 
 @media (max-width: 768px) {
     nav a:nth-child(1).active~span {
-        left: 30;
-        width: 54px;
+        left: 33;
+        width: 60px;
     }
     
     nav a:nth-child(2).active~span {
-        left: 73px;
-        width: 55px;
+        left: 67px;
+        width: 62px;
     }
     
     nav a:nth-child(3).active~span {
-        left: 139px;
-        width: 72px;
+        left: 133px;
+        width: 78px;
     }
     
     nav a:nth-child(4).active~span {
-        left: 221px;
-        width: 63px;
+        left: 215px;
+        width: 67px;
     }
     
     nav a:nth-child(5).active~span {
-        left: 293px;
-        width: 67px;
+        left: 287px;
+        width: 72px;
     }
 }
 
@@ -518,6 +518,7 @@ img {
     100%{transform: translateY(0%);}
 
 }
+
 
 
 
