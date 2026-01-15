@@ -183,8 +183,8 @@ nav a:nth-child(5).active~span {
 
 @media (max-width: 768px) {
     nav a:nth-child(1).active~span {
-        left: 9;
-        width: 56px;
+        left: 10;
+        width: 54px;
     }
     
     nav a:nth-child(2).active~span {
@@ -518,6 +518,7 @@ img {
     100%{transform: translateY(0%);}
 
 }
+
 
 
 
