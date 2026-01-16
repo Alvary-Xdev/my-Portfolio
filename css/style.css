@@ -202,7 +202,7 @@ nav a:nth-child(5):hover~span {
 @media (max-width: 768px) {
     nav a:nth-child(1).active~span {
         left: 8px;
-        width: 50px;
+        width: 52px;
     }
     nav a:nth-child(2).active~span {
         left: 70px;
@@ -225,7 +225,7 @@ nav a:nth-child(5):hover~span {
 @media (max-width: 768px) {
     nav a:nth-child(1):hover~span {
         left: 8px;
-        width: 50px;
+        width: 52px;
     }
     nav a:nth-child(2):hover~span {
         left: 70px;
@@ -529,6 +529,7 @@ img {
 @keyframes show-bar { /*@keyframes show-bars instead*/
     100%{transform: translateY(0%);}
 }
+
 
 
 
